@@ -1,0 +1,10 @@
+var express = require('express');
+const router = express.Router();
+const tagController = require('../controllers/tagController');
+const { authenticateToken } = require('../middleware/token');
+router.post('/create',authenticateToken, tagController.create);
+router.post('/edit',authenticateToken, tagController.edit);
+router.post('/delete',authenticateToken,tagController.delete);
+router.post('/getAllTags',authenticateToken,tagController.getAllTags);
+router.post('/getTagByPageNumber',authenticateToken,tagController.getTagByPageNumber);
+module.exports = router;

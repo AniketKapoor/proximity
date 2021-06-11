@@ -1,0 +1,10 @@
+var express = require('express');
+const router = express.Router();
+const subjectController = require('../controllers/subjectController');
+const { authenticateToken } = require('../middleware/token');
+router.post('/create',authenticateToken, subjectController.create);
+router.post('/edit',authenticateToken, subjectController.edit);
+router.post('/delete',authenticateToken,subjectController.delete);
+router.post('/getAllSubjects',authenticateToken,subjectController.getAllSubjects);
+router.post('/getSubjectByPageNumber',authenticateToken,subjectController.getSubjectByPageNumber);
+module.exports = router;

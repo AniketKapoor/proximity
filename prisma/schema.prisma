@@ -21,3 +21,26 @@ model course {
   status        Boolean @default(true)
   creatorUserId Int
 }
+
+model subject {
+  subjectId     Int     @id @default(autoincrement())
+  subjectName   String  @db.VarChar(255)
+  status        Boolean @default(true)
+  creatorUserId Int
+}
+
+model tags {
+  tagsId        Int     @id @default(autoincrement())
+  tagName       String  @db.VarChar(255)
+  status        Boolean @default(true)
+  creatorUserId Int
+}
+
+model video {
+  videoId    Int      @id @default(autoincrement())
+  courseIds  Json?  
+  subjectIds Json?  
+  tagIds     Json?  
+  status     Boolean? @default(true)
+  videoTitle String?  @db.VarChar(255)
+}

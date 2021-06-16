@@ -12,4 +12,5 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/subjects', subjectRouter);
 app.use('/api/v1/tags', tagRouter);
+app.use('/api/v1/video',videoRouter);
 app.listen(port, () => { console.log(`Server is listening on port ${port}`); });

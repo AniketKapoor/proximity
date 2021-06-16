@@ -1,10 +1,10 @@
 const { PrismaClient } = require('@prisma/client');
 const { json } = require('express');
 const { denyAccess } = require('../middleware/permission')
-const { createtag } = require('../middleware/tag')
+const { createTag } = require('../middleware/tag')
 const prisma = new PrismaClient;
 exports.create = async (req, res) => {
-    //   let access=await (req.user.userType == 'instructor'?createtag(req,res):denyAccess())
+    //   let access=await (req.user.userType == 'instructor'?createTag(req,res):denyAccess())
     const { tagName } = req.body;
     let returnData = {}
     if (req.user.userType == 'instructor') {
